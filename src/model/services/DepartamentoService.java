@@ -24,5 +24,15 @@ public class DepartamentoService {
 		 */
 
 	}
+	
+	public void saveOrUpdate(Departamento obj) {
+		//verificar se vai ser inserido um novo departamento ou editar um ja existente
+		if (obj.getId() == null) {
+			dao.insert(obj);
+		}
+		else {
+			dao.update(obj);
+		}
+	}
 
 }
