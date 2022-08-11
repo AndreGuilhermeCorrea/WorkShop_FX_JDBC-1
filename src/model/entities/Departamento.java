@@ -29,7 +29,7 @@ public class Departamento implements Serializable{
 		return nome;
 	}
 
-	public void setName(String nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
