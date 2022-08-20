@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="209.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartamentoListaControle">
+<VBox prefHeight="333.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.VendedoresListaControle">
    <children>
-      <Label text="Registro Departamento">
+      <Label text="Registro Vendedores">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -28,8 +28,11 @@
         <columns>
           <TableColumn fx:id="tableColumnId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="tableColumnNome" prefWidth="75.0" text="Nome" />
-            <TableColumn fx:id="tableColumnEDIT" prefWidth="75.0" />
-            <TableColumn fx:id="tableColumnREMOVE" prefWidth="75.0" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="75.0" text="E-mail" />
+            <TableColumn fx:id="tableColumnDataNasc" prefWidth="120.0" text="Data Nascimento" />
+            <TableColumn fx:id="tableColumnSalarioBase" prefWidth="84.0" text="Salário Base" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="69.0" />
+            <TableColumn fx:id="tableColumnREMOVE" />
         </columns>
       </TableView>
    </children>

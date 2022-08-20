@@ -122,7 +122,7 @@ public class VendedoresDaoJDBC implements VendedoresDao {
 			rs = st.executeQuery();
 			if (rs.next()) {
 				Departamento dep = instantiateDepartamento(rs);
-				Vendedores obj = instantiateSeller(rs, dep);
+				Vendedores obj = instantiateVendedores(rs, dep);
 				return obj;
 			}
 			return null;
@@ -136,13 +136,13 @@ public class VendedoresDaoJDBC implements VendedoresDao {
 		}
 	}
 
-	private Vendedores instantiateSeller(ResultSet rs, Departamento dep) throws SQLException {
+	private Vendedores instantiateVendedores(ResultSet rs, Departamento dep) throws SQLException {
 		Vendedores obj = new Vendedores();
 		obj.setId(rs.getInt("Id"));
 		obj.setNome(rs.getString("Nome"));
 		obj.setEmail(rs.getString("Email"));
 		obj.setSalarioBase(rs.getDouble("SalarioBase"));
-		obj.setDataNasc(rs.getDate("DataNasc"));
+		obj.setDataNasc(new java.util.Date(rs.getTimestamp("DataNasc").getTime()));
 		obj.setDepartamento(dep);
 		return obj;
 	}
@@ -179,7 +179,7 @@ public class VendedoresDaoJDBC implements VendedoresDao {
 					map.put(rs.getInt("DepartamentoId"), dep);
 				}
 				
-				Vendedores obj = instantiateSeller(rs, dep);
+				Vendedores obj = instantiateVendedores(rs, dep);
 				list.add(obj);
 			}
 			return list;
@@ -221,7 +221,7 @@ public class VendedoresDaoJDBC implements VendedoresDao {
 					map.put(rs.getInt("DepartamentoId"), dep);
 				}
 				
-				Vendedores obj = instantiateSeller(rs, dep);
+				Vendedores obj = instantiateVendedores(rs, dep);
 				list.add(obj);
 			}
 			return list;

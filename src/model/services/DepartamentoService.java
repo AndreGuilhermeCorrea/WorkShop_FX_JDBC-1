@@ -26,13 +26,19 @@ public class DepartamentoService {
 	}
 	
 	public void saveOrUpdate(Departamento obj) {
-		//verificar se vai ser inserido um novo departamento ou editar um ja existente
+		//verificar se vai ser inserido um novo departamento ou atualizar um ja existente
+		//teste se o id é nulo
 		if (obj.getId() == null) {
 			dao.insert(obj);
 		}
 		else {
 			dao.update(obj);
 		}
+	}
+	
+	//método para remover departamento do banco
+	public void remove(Departamento obj) {
+		dao.deleteById(obj.getId());
 	}
 
 }
